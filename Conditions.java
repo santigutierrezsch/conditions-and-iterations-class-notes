@@ -37,7 +37,7 @@ public class Conditions
          */
         if (coinFlip == 0)
             System.out.println("coin is tails");
-            System.out.println("better luck next time...");
+            System.out.println("Better luck next time...");
             
         /*
          * if, else statement
