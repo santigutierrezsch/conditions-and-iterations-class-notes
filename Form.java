@@ -6,18 +6,21 @@ import java.util.Scanner;
  * @author (your name)
  * @version (a version number or a date)
  */
+
 public class Form
 {
     private boolean isValid;
     private int streetNum;
     private int age;
+    private String genderOutput;
 
     /**
      * Constructor for objects of class Form.
      * 
      * Prompts the user via the terminal to complete each field in the form.
      */
-    public Form()
+    
+public Form()
     {
         // asumme the form is valid
         this.isValid = true;
@@ -55,6 +58,8 @@ public class Form
     {
         return this.isValid;
     }
+    
+    
     
     /**
      * Returns a string containing each field and the user's value for that field.
@@ -101,7 +106,8 @@ public class Form
 
         return streetNum;
     }
-
+    
+    prifvaTER String 
     /**
      * Validates the string representing an age against each of the specified test cases for the agefield.
      * 
