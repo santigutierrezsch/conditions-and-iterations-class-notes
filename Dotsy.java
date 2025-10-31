@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 /**
  * Write a description of class Dotsy here.
@@ -7,27 +8,45 @@
  */
 public class Dotsy
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int p1_first, p1_second, p1_third, p1_fourth, p1_fifth;
+    private int p2_first, p2_second, p2_third, p2_fourth, p2_fifth;
+    private int p3_first, p3_second, p3_third, p3_fourth, p3_fifth;
+    private int p4_first, p4_second, p4_third, p4_fourth, p4_fifth;
+    private int p5_first, p5_second, p5_third, p5_fourth, p5_fifth;
+    
+    private String player1;
 
-    /**
-     * Constructor for objects of class Dotsy
-     */
-    public Dotsy()
+    private int playerCount;
+
+    Scanner in = new Scanner(System.in);
+
+    private void create_vars(int playerCountInput)
     {
-        // initialise instance variables
-        x = 0;
+        playerCount = playerCountInput;
+
+        if (playerCount < 1 || playerCount > 5) {
+            System.out.println("Error: Player count must be between 1 and 5 inclusive.");
+            return;
+        }
+
+        System.out.println("Variables created for " + playerCount + " players.");
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    private void Main()
     {
-        // put your code here
-        return x + y;
+        System.out.println("Welcome to the Java Dotsy Game!");
+
+        System.out.print("To start, how many people will be playing? (1-5) ");
+        String playerCountInput = in.nextLine();
+
+        int count = Integer.parseInt(playerCountInput);
+
+        create_vars(count);
     }
+
+    public static void main(String[] args)
+        {
+            Dotsy game = new Dotsy();
+            game.Main();
+        }
 }
