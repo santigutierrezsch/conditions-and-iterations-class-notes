@@ -74,12 +74,12 @@ public class Iterations
          * 
          */
         final int LIMIT = 5;
-        int number;
-        for (number=1;                       // initialization
-            number <= LIMIT;                     // condition
-            number++)                            // update of the loop variable
+        int count;
+        for (count=1;                            // initialization
+            count <= LIMIT;                      // condition
+            count++)                             // update of the loop variable
         {
-            System.out.println(number);          // body
+            System.out.println(count);           // body
         }
         
         System.out.println("done");
@@ -89,7 +89,7 @@ public class Iterations
          *          Can't use the variable outside of the for loop unless initialized outside of the loop
          */
         
-        System.out.println(number);
+        System.out.println(count);
 
     }
     
@@ -106,9 +106,62 @@ public class Iterations
          */
         
         // we want to print five *
-        for (int i=0; i<5; i++)
+        for (int i=0; i<5; i++) // if it was i<=5 then it would be 0,1,2,3,4 and 5, so 6 total stars, not 5.
         {
             System.out.println("*");
         }
+    }
+    
+    public static void doExample()
+    {
+        /*
+         * do loop (do-while loop)
+         * 
+         *      1. Executes the body of the loop first
+         *      2. Evalutes the condition
+         *          if true, execute the body again
+         *          if false, continue execution after the loop
+         */
+        
+        int count = 1;          // initialization
+        
+        do{
+            System.out.println(count);      // body
+            count++;                        // update the loop variable
+        } 
+        while (count <= 5);                 // condition
+        
+        System.out.println("Done");
+    }
+    
+    public static int sum()
+    {
+        Scanner s = new Scanner(System.in);
+        
+        int sum = 0;
+        /*
+         * Sentinal value / variable
+         *          value used to terminate a loop (e.g., -1). Often entered by a user
+         */
+        int value = 0;
+        // int value = 1;                   // accounts for the -1 being summed
+        
+        do
+        {
+            System.out.print("Enter a positive integer: (-1 to quit)\t");
+            
+            value = s.nextInt();
+            if (value != -1)                // accounts for the -1 being summed
+            {
+                sum += value;
+            } else {
+                sum += 0;
+            }
+        }
+        while(value != -1);
+        
+        // sum += 1;                        // accounts for the -1 being summed
+        
+        return sum;
     }
 }
